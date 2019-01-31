@@ -1,0 +1,87 @@
+mogstuff:~/workspace $ git remote
+fatal: Not a git repository (or any of the parent directories): .git
+mogstuff:~/workspace $ mkdir lighthouse
+mogstuff:~/workspace $ cd lighthouse
+mogstuff:~/workspace/lighthouse $ git init
+Initialized empty Git repository in /home/ubuntu/workspace/lighthouse/.git/
+mogstuff:~/workspace/lighthouse (master) $ git clone https://github.com/GoogleChrome/lighthouse
+Cloning into 'lighthouse'...
+remote: Enumerating objects: 393, done.
+remote: Counting objects: 100% (393/393), done.
+remote: Compressing objects: 100% (264/264), done.
+remote: Total 40663 (delta 216), reused 203 (delta 120), pack-reused 40270
+Receiving objects: 100% (40663/40663), 29.43 MiB | 15.75 MiB/s, done.
+Resolving deltas: 100% (29584/29584), done.
+mogstuff:~/workspace/lighthouse (master) $ clear
+mogstuff:~/workspace/lighthouse (master) $ git remote
+mogstuff:~/workspace/lighthouse (master) $ git remote -v
+mogstuff:~/workspace/lighthouse (master) $ cd ..
+mogstuff:~/workspace $ rem lighthouse
+bash: rem: command not found
+mogstuff:~/workspace $ rmdir lighthouse
+rmdir: failed to remove ‘lighthouse’: Directory not empty
+mogstuff:~/workspace $ rm -r lighthouse
+rm: remove write-protected regular file ‘lighthouse/lighthouse/.git/objects/pack/pack-1ebf15f71b606b2f24807bffecbb489898ae38ed.pack’? N
+rm: remove write-protected regular file ‘lighthouse/lighthouse/.git/objects/pack/pack-1ebf15f71b606b2f24807bffecbb489898ae38ed.idx’? ^X^C
+mogstuff:~/workspace $ clear
+mogstuff:~/workspace $ mkdir my-travel-plans
+mogstuff:~/workspace $ git init
+Initialized empty Git repository in /home/ubuntu/workspace/.git/
+mogstuff:~/workspace (master) $ clear
+mogstuff:~/workspace (master) $ mkdir my-travel-plans
+mogstuff:~/workspace (master) $ cd my-travel-plans
+mogstuff:~/workspace/my-travel-plans (master) $ git init
+Initialized empty Git repository in /home/ubuntu/workspace/my-travel-plans/.git/
+mogstuff:~/workspace/my-travel-plans (master) $ touch README.md
+mogstuff:~/workspace/my-travel-plans (master) $ touch index.html
+mogstuff:~/workspace/my-travel-plans (master) $ touch app.css
+mogstuff:~/workspace/my-travel-plans (master) $ git add .
+mogstuff:~/workspace/my-travel-plans (master) $ git commit -m "initial commit"
+[master (root-commit) a563abf] initial commit
+ 3 files changed, 82 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 app.css
+ create mode 100644 index.html
+mogstuff:~/workspace/my-travel-plans (master) $ git remote add origin https://github.com/mogstuff/my-travel-plans.git
+mogstuff:~/workspace/my-travel-plans (master) $ git origin
+git: 'origin' is not a git command. See 'git --help'.
+mogstuff:~/workspace/my-travel-plans (master) $ git remote -v
+origin  https://github.com/mogstuff/my-travel-plans.git (fetch)
+origin  https://github.com/mogstuff/my-travel-plans.git (push)
+mogstuff:~/workspace/my-travel-plans (master) $ git remote
+origin
+mogstuff:~/workspace/my-travel-plans (master) $ git log --oneline --graph --decorate --all
+* a563abf (HEAD -> master) initial commit
+mogstuff:~/workspace/my-travel-plans (master) $ git push origin master
+Username for 'https://github.com': mogstuff
+Password for 'https://mogstuff@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 935 bytes | 935.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/mogstuff/my-travel-plans.git
+ * [new branch]      master -> master
+mogstuff:~/workspace/my-travel-plans (master) $ git log --oneline --graph --decorate --all
+* a563abf (HEAD -> master, origin/master) initial commit
+mogstuff:~/workspace/my-travel-plans (master) $ git pull origin master
+From https://github.com/mogstuff/my-travel-plans
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+mogstuff:~/workspace/my-travel-plans (master) $ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/mogstuff/my-travel-plans
+ * branch            master     -> FETCH_HEAD
+   a563abf..ea47f7a  master     -> origin/master
+Updating a563abf..ea47f7a
+Fast-forward
+ app.css | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+mogstuff:~/workspace/my-travel-plans (master) $ git fetch origin master
+From https://github.com/mogstuff/my-travel-plans
+ * branch            master     -> FETCH_HEAD
+mogstuff:~/workspace/my-travel-plans (master) $ 
